@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+publish {
+    userOrg = 'nekolaboratory'
+    groupId = 'com.nekolaboratory'
+    artifactId = 'EmulatorDetector'
+    publishVersion = '1.0.0'
+    desc = 'Android Emulator Detector Unity Compatible.'
+    website = 'https://github.com/mofneko/EmulatorDetector'
+    repoName = 'EmulatorDetector'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+}
