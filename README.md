@@ -1,7 +1,7 @@
 # EmulatorDetector
 =============================================
 
-[ ![Download](https://api.bintray.com/packages/nekolaboratory/EmulatorDetector/EmulatorDetector/images/download.svg) ](https://bintray.com/nekolaboratory/EmulatorDetector/EmulatorDetector/_latestVersion)
+[![Release](https://jitpack.io/v/mofneko/EmulatorDetector.svg)](https://jitpack.io/#mofneko/EmulatorDetector)
 
 This module help you to emulator detection to your Android project suported Unity.
 
@@ -16,8 +16,23 @@ This module help you to emulator detection to your Android project suported Unit
 # How to use
 
 ##### Java and Kotlin
+
+Users of your library will need add the jitpack.io repository:
+
 ```gradle
-compile 'com.nekolaboratory:EmulatorDetector:1.0.0'
+allprojects {
+ repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+ }
+}
+```
+and:
+
+```gradle
+dependencies {
+    compile 'com.github.mofneko:EmulatorDetector:1.0.0'
+}
 ```
 ```java
 EmulatorDetector.isEmulator(this);

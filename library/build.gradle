@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.mofneko'
 
 android {
     compileSdkVersion 27
@@ -19,16 +21,6 @@ android {
         }
     }
 
-}
-
-publish {
-    userOrg = 'nekolaboratory'
-    groupId = 'com.nekolaboratory'
-    artifactId = 'EmulatorDetector'
-    publishVersion = '1.0.0'
-    desc = 'Android Emulator Detector Unity Compatible.'
-    website = 'https://github.com/mofneko/EmulatorDetector'
-    repoName = 'EmulatorDetector'
 }
 
 dependencies {
