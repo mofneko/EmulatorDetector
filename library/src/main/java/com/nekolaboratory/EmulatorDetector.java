@@ -1,10 +1,11 @@
 package com.nekolaboratory;
 
-
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Build;
 
 import java.io.File;
@@ -190,6 +191,16 @@ public class EmulatorDetector {
 
     public static boolean checkPackageName(Context context) {
         final PackageManager packageManager = context.getPackageManager();
+
+        Intent intent = new Intent(Intent.ACTION_MAIN, null);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+        List<ResolveInfo> availableActivities = packageManager.queryIntentActivities(intent, 0);
+        for(ResolveInfo resolveInfo : availableActivities){
+            if (resolveInfo.activityInfo.packageName.startsWith("com.bluestacks.")) {
+                return true;
+            }
+        }
         List<ApplicationInfo> packages = packageManager
                 .getInstalledApplications(PackageManager.GET_META_DATA);
         for (ApplicationInfo packageInfo : packages) {
