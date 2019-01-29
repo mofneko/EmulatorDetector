@@ -31,7 +31,7 @@ and:
 
 ```gradle
 dependencies {
-    compile 'com.github.mofneko:EmulatorDetector:1.0.0'
+    compile 'com.github.mofneko:EmulatorDetector:1.1.0'
 }
 ```
 ```java
