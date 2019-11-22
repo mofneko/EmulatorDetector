@@ -209,6 +209,8 @@ public class EmulatorDetector {
                 return true;
             } else if (packageName.startsWith("com.bignox.")) {
                 return true;
+            } else if (packageName.startsWith("com.nox.mopen.app")) {
+                return true;
             } else if (packageName.startsWith("me.haima.")) {
                 return true;
             } else if (packageName.startsWith("com.bluestacks.")) {
